@@ -78,7 +78,12 @@ jobs:
           ./gradlew assembleRelease
 
       # 7. Upload APK
-      - name: Upload APK
+      - name: Debug APK path
+        run: |
+          echo "Listing APKs in release folder:"
+          ls -al android/app/build/outputs/apk/release
+
+      - name: Upload APK as Artifact
         uses: actions/upload-artifact@v3
         with:
           name: app-release.apk
