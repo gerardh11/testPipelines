@@ -126,7 +126,7 @@ jobs:
       - name: Download APK
         uses: actions/download-artifact@v3
         with:
-          name: app-release.apk.apk
+          name: app-release.apk
 
       - name: Upload APK to Sauce Labs
         env:
