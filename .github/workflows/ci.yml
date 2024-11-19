@@ -128,6 +128,12 @@ jobs:
         with:
           name: app-release.apk
 
+      - name: Debug directory
+        run: ls -al
+
+      - name: Find APK in workspace
+        run: find . -name "*.apk"
+
       - name: Upload APK to Sauce Labs
         env:
           SAUCE_USERNAME: ${{ secrets.SAUCE_USERNAME }}
@@ -136,4 +142,3 @@ jobs:
           curl -u "$SAUCE_USERNAME:$SAUCE_ACCESS_KEY" \
               --location --request POST 'https://api.us-west-1.saucelabs.com/v1/storage/upload' \
               --form 'payload=@app-release.apk' \
-              --form 'name="TestSaucelab1.apk"'
