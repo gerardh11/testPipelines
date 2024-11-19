@@ -135,5 +135,5 @@ jobs:
         run: |
           curl -u "$SAUCE_USERNAME:$SAUCE_ACCESS_KEY" \
               --location --request POST 'https://api.us-west-1.saucelabs.com/v1/storage/upload' \
-              --form 'payload=@app-release.apk.apk' \
+              --form 'payload=@app-release.apk' \
               --form 'name="TestSaucelab1.apk"'
